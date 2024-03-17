@@ -1,0 +1,133 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/" id="form" class="form" method="POST">
+        <select name="devies" class="form-select">
+          <option value="fan">fan</option>
+          
+        </select>
+        <select name="value" class="form-select">
+          <option value="">Any number</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <button type="submit" class="form-submit">Go</button>
+      </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Home Control</title>
+<link rel="stylesheet" href="styles/Style.css">
+</head>
+<body>
+<div class="container">
+  
+    <div class="device">
+        <h1>Fan</h1>
+        <p class="subheader">Control the speed of the fan</p>
+        <div class="dashboard">
+            <img class="image" src="Images/Fan.png" alt="Fan Image">
+            <div class="controls">
+                <button class="toggle">On</button>
+                
+            </div>
+        </div>
+        <div class="status">
+            <p class="shead">
+                Speed
+            </p>
+            <p class="ssubhead">
+                2
+            </p>
+        </div>
+        <div class="speedial">
+            <button class="Speed">-</button>
+            <span >Speed: 0</span>
+            <button class="Speed">+</button>
+        </div>
+    </div>
+  
+    <div class="device">
+        <h1>Bulb</h1>
+        <p class="subheader">Tap the bulb to Turn it ON or OFF</p>
+        <div class="dashboard">
+            <form action="/" method="POST" class="devices">
+                <button type="submit" name="device" value="bulb" id="bulb">💡</button>
+                <div class="status">
+                    <p class="shead">
+                        Status
+                    </p>
+                    <p class="ssubhead">
+                        On
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    <div class="device">
+        <h1>LED</h1>
+        <p class="subheader">Select the color for the LED</p>
+        <div class="dashboard">
+            <img class="image" src="Images/ColourfulBulb.png" alt="LED Image">
+            <div class="controls">
+                <button class="toggle">On</button>
+                
+            </div>
+        </div>
+        <div class="status">
+            <p class="shead">
+                Color
+            </p>
+            <p class="ssubhead">
+                #ffff
+            </p>
+        </div>
+        <!-- <div class="colorGrid">
+            <p>Color Picker</p>
+            <input type="color" id="ledColorPicker">
+        </div>   -->
+    </div>
+  
+    <div class="device">
+        <h1>Air Conditioner</h1>
+        <p class="subheader">Control the state & temp of AC</p>
+        <div class="dashboard">
+            <img class="image" src="Images/AC.png" alt="AC Image">
+            <!-- <div class="controls">
+                <button class="toggle">On</button>
+                
+            </div> -->
+            <div class="status">
+                <p class="shead">
+                    State
+                </p>
+                <p class="ssubhead">
+                    Off
+                </p>
+            </div>
+            <div class="status">
+                <p class="shead">
+                    Temperature
+                </p>
+                <p class="ssubhead">
+                    23
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
