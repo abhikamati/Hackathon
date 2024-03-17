@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Control</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="head">
+        <p class="heading">Simulation page for Hustlers</p>
+        <p class="subheading">This page listens to the changes in the database and updates the UI in real time.</p>
+    </div>
+    <div class="container">
+        <div class="device">
+            <h1>Fan</h1>
+            <p class="subheader">Control the speed of the fan</p>
+            <div class="dashboard">
+                <img class="image" src="Images/Fan.png" alt="Fan Image">
+                <div class="controls">
+                    <button class="toggle">On</button>
+                </div>
+            </div>
+            <div class="status">
+                <p class="shead">
+                    Speed
+                </p>
+                <p class="ssubhead">
+                    2
+                </p>
+            </div>
+            <div class="speedial">
+                <button class="Speed">-</button>
+                <span>Speed</span>
+                <button class="Speed">+</button>
+            </div>
+        </div>
+
+        <div class="device">
+            <h1>Bulb</h1>
+            <p class="subheader">Turn the bulb on or off</p>
+            <div class="dashboard">
+                <img class="image" src="Images/Bulb.png" alt="Bulb Image">
+                <div class="controls">
+                    <button class="toggle">On</button>
+                </div>
+            </div>
+            <div class="status">
+                <p class="shead">
+                    Status
+                </p>
+                <p class="ssubhead">
+                    On
+                </p>
+            </div>
+        </div>
+
+        <div class="device">
+            <h1>LED</h1>
+            <p class="subheader">Select the color for the LED</p>
+            <div class="dashboard">
+                <img class="image" src="Images/ColourfulBulb.png" alt="LED Image">
+                <div class="controls">
+                    <button class="toggle">On</button>
+
+                </div>
+            </div>
+            
+            <div class="status">
+                <p class="shead">
+                    Color
+                </p>
+                <p class="ssubhead">
+                    #ffff
+                </p>
+            </div>
+        </div>
+
+        <div class="device">
+            <h1>Air Conditioner</h1>
+            <p class="subheader">Control the state & temp of AC</p>
+            <div class="dashboard">
+                <img class="image" src="Images/AC.png" alt="AC Image">
+                <div class="controls">
+                    <button class="toggle">On</button>
+                </div>
+            </div>
+            <div class="status">
+                <p class="shead">
+                    State
+                </p>
+                <p class="ssubhead">
+                    Off
+                </p>
+            </div>
+            <div class="status">
+                <p class="shead">
+                    Temperature
+                </p>
+                <p class="ssubhead">
+                    23
+                </p>
+            </div>
+        </div>
+        <script>
+            // Code for controlling devices and fetching API data goes here
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+ body{
+    background-color: #f0f0f0;
+ }
+ .head{
+    background-color: #f0f0f0;
+    margin: 0px;
+ }
+ .heading{
+    font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
+ }
+
+ .subheading{
+    text-align: center;
+ }
+ 
+ .container {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     height: 80vh;
+     background-color: #f0f0f0;
+     margin: 0px;
+ }
+
+ .subheader {
+     opacity: 0.6;
+ }
+
+ .toggle {
+     border-style: none;
+     border-width: 0px;
+     border-radius: 5px;
+     background-color: white;
+     box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.08);
+     height: 50px;
+     width: 50px;
+ }
+
+ .image {
+     margin-right: 70px;
+ }
+
+ .dashboard {
+     display: flex;
+     flex-direction: row;
+     row-gap: 20px;
+     vertical-align: middle;
+     align-items: center;
+ }
+
+ .status{
+    width: 220px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    column-gap: 0px;
+    margin-top: 5px;
+ }
+ .status:hover{
+    cursor: pointer;
+    background-color: rgb(219, 219, 219);
+ }
+ .shead{
+    text-align: left;
+    padding-left:10px;
+    opacity: 0.7;
+    margin-bottom: 0px;
+ }
+ .ssubhead{
+    margin-top: 0px;
+    text-align: left;
+    padding-left:10px;
+    font-size: 8px;
+ }
+
+ .device {
+     display: flex;
+     flex-direction: column;
+     align-items: start;
+     padding: 20px;
+     margin: 20px;
+     width: 250px;
+     height: 350px;
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     text-align: center;
+ }
+
+ .device h1 {
+     margin-bottom: 10px;
+     font-size: 24px;
+ }
+
+ .device p {
+     margin-bottom: 20px;
+     font-size: 16px;
+ }
+
+ .device img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     margin-bottom: 20px;
+ }
+
+ .controls {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+ }
+
+ .colorGrid {
+     display: flex;
+     flex-direction: column;
+     column-gap: -10px;
+ }
+
+ .speedial {
+     margin-top: 30px;
+ }
+
+ .Speed {
+     border-style: none;
+     border-width: 0px;
+     border-radius: 5px;
+     background-color: white;
+     box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.08);
+     height: 30px;
+     width: 30px;
+ }

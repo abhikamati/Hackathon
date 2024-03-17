@@ -1,3 +1,19 @@
+body{
+    background-color: #f0f0f0;
+ }
+ .head{
+    background-color: #f0f0f0;
+    margin: 0px;
+ }
+ .heading{
+    font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
+ }
+
+ .subheading{
+    text-align: center;
+ }
  .container {
     display: flex;
     flex-direction: row;
@@ -36,7 +52,7 @@
     padding: 20px;
     margin: 20px ;
     width: 250px;
-    height: 250px;
+    height: 350px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -95,6 +111,7 @@
   }
 
   .status{
+    margin-top: 10px;
     width: 220px;
     height: 80px;
     border-radius: 10px;
@@ -119,4 +136,4 @@
     text-align: left;
     padding-left:10px;
     font-size: 8px;
- }
+ }   

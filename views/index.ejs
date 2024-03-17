@@ -33,6 +33,10 @@
 <link rel="stylesheet" href="styles/Style.css">
 </head>
 <body>
+    <div class="head">
+        <p class="heading">Simulation page for Hustlers</p>
+        <p class="subheading">This page listens to the changes in the database and updates the UI in real time.</p>
+    </div>
 <div class="container">
   
     <div class="device">
@@ -40,23 +44,44 @@
         <p class="subheader">Control the speed of the fan</p>
         <div class="dashboard">
             <img class="image" src="Images/Fan.png" alt="Fan Image">
-            <div class="controls">
+            <!-- <div class="controls">
                 <button class="toggle">On</button>
                 
-            </div>
+            </div> -->
+            <form action="/fan" method="POST" class="form">
+                <!-- script add karna hai -->
+                <select name="value" class="form-select">
+                    <option value="0">Select Speed</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit" name="device" value="fan">
+                    <!-- script jayega -->
+                    <%if(locals.fanSpeed){ %>
+                        <%=fanStatus %>
+
+                   <% } else {%>
+                    ON
+                    <% } %> 
+                </button>
+            </form>
         </div>
         <div class="status">
             <p class="shead">
+                
                 Speed
             </p>
             <p class="ssubhead">
-                2
+                <%if(locals.fanSpeed){ %>
+                <%= fanSpeed %>
+                <% }else{ %>
+                    0
+                    <% } %>
             </p>
-        </div>
-        <div class="speedial">
-            <button class="Speed">-</button>
-            <span >Speed: 0</span>
-            <button class="Speed">+</button>
         </div>
     </div>
   
@@ -64,14 +89,26 @@
         <h1>Bulb</h1>
         <p class="subheader">Tap the bulb to Turn it ON or OFF</p>
         <div class="dashboard">
-            <form action="/" method="POST" class="devices">
-                <button type="submit" name="device" value="bulb" id="bulb">💡</button>
+            <form action="/bulb" method="POST" class="devices">
+                
+                <button type="submit" name="device" value="bulb" id="bulb">
+                    💡
+                </button>
+                <input type="radio" id="option1" name="value" value="1">
+                <label for="option1">ON</label><br>
+                <input type="radio" id="option2" name="value" value="0" checked>
+                <label for="option2">OFF</label>
                 <div class="status">
                     <p class="shead">
                         Status
                     </p>
                     <p class="ssubhead">
-                        On
+
+                        <%if(locals.data){ %>
+                        <%= data.bulb %>
+                        <% }else{ %>
+                        OFF
+                        <% } %>
                     </p>
                 </div>
             </form>
@@ -83,23 +120,35 @@
         <p class="subheader">Select the color for the LED</p>
         <div class="dashboard">
             <img class="image" src="Images/ColourfulBulb.png" alt="LED Image">
-            <div class="controls">
+            <!-- <div class="controls">
                 <button class="toggle">On</button>
                 
-            </div>
+            </div> -->
         </div>
+        <form action="/LED" method="POST">
+            <label for="favcolor">Select your favorite color:</label>
+            <input type="color" id="favcolor" name="value">
+            <button class="toggle" type="submit" name="device" value="led">
+            <%  if(locals.led){ %>    
+                <%= led  %>
+            <% }else{ %>
+                ON
+            <% } %>
+            </button>
+        </form>
         <div class="status">
             <p class="shead">
                 Color
             </p>
             <p class="ssubhead">
-                #ffff
+                <%  if(locals.color){ %>    
+                    <%= color  %>
+                <% }else{ %>
+                    #ffffff
+                <% } %>
+               
             </p>
         </div>
-        <!-- <div class="colorGrid">
-            <p>Color Picker</p>
-            <input type="color" id="ledColorPicker">
-        </div>   -->
     </div>
   
     <div class="device">
@@ -107,26 +156,25 @@
         <p class="subheader">Control the state & temp of AC</p>
         <div class="dashboard">
             <img class="image" src="Images/AC.png" alt="AC Image">
-            <!-- <div class="controls">
+            <div class="controls">
                 <button class="toggle">On</button>
-                
-            </div> -->
-            <div class="status">
-                <p class="shead">
-                    State
-                </p>
-                <p class="ssubhead">
-                    Off
-                </p>
             </div>
-            <div class="status">
-                <p class="shead">
-                    Temperature
-                </p>
-                <p class="ssubhead">
-                    23
-                </p>
-            </div>
+        </div>
+        <div class="status">
+            <p class="shead">
+                State
+            </p>
+            <p class="ssubhead">
+                Off
+            </p>
+        </div>
+        <div class="status">
+            <p class="shead">
+                Temperature
+            </p>
+            <p class="ssubhead">
+                23
+            </p>
         </div>
     </div>
 </body>
