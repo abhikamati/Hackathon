@@ -1,29 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/" id="form" class="form" method="POST">
-        <select name="devies" class="form-select">
-          <option value="fan">fan</option>
-          
-        </select>
-        <select name="value" class="form-select">
-          <option value="">Any number</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-        <button type="submit" class="form-submit">Go</button>
-      </form>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +8,7 @@
 </head>
 <body>
     <div class="head">
-        <p class="heading">Simulation page for Hustlers</p>
-        <p class="subheading">This page listens to the changes in the database and updates the UI in real time.</p>
+        <p class="heading">Smart Home</p>
     </div>
 <div class="container">
   
@@ -43,11 +16,7 @@
         <h1>Fan</h1>
         <p class="subheader">Control the speed of the fan</p>
         <div class="dashboard">
-            <img class="image" src="Images/Fan.png" alt="Fan Image">
-            <!-- <div class="controls">
-                <button class="toggle">On</button>
-                
-            </div> -->
+            <img class="image" src="Images/Fan.png" alt="Fan Image" >
             <form action="/fan" method="POST" class="form">
                 <!-- script add karna hai -->
                 <select name="value" class="form-select">
@@ -59,7 +28,7 @@
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button type="submit" name="device" value="fan">
+                <button  type="submit" name="device" value="fan">
                     <!-- script jayega -->
                     <%if(locals.fanSpeed){ %>
                         <%=fanStatus %>
@@ -124,18 +93,25 @@
                 <button class="toggle">On</button>
                 
             </div> -->
+            <form action="/LED" method="POST">
+                <label for="favcolor">Select your favorite color:</label>
+                <input type="color" id="favcolor" name="value"  
+                <% if(locals.color) { %>
+                    value = <%= color %>
+                    <% }else{ %>
+                        value="#f2a978"
+                    <% } %>
+                >
+                <button class="toggle" type="submit" name="device" value="led">
+                <%  if(locals.led){ %>    
+                    <%= led  %>
+                <% }else{ %>
+                    ON
+                <% } %>
+                </button>
+            </form>
         </div>
-        <form action="/LED" method="POST">
-            <label for="favcolor">Select your favorite color:</label>
-            <input type="color" id="favcolor" name="value">
-            <button class="toggle" type="submit" name="device" value="led">
-            <%  if(locals.led){ %>    
-                <%= led  %>
-            <% }else{ %>
-                ON
-            <% } %>
-            </button>
-        </form>
+        
         <div class="status">
             <p class="shead">
                 Color
@@ -144,7 +120,7 @@
                 <%  if(locals.color){ %>    
                     <%= color  %>
                 <% }else{ %>
-                    #ffffff
+                    #f2a978
                 <% } %>
                
             </p>
@@ -154,18 +130,30 @@
     <div class="device">
         <h1>Air Conditioner</h1>
         <p class="subheader">Control the state & temp of AC</p>
-        <div class="dashboard">
+        <div class="acDashboard">
             <img class="image" src="Images/AC.png" alt="AC Image">
-            <div class="controls">
-                <button class="toggle">On</button>
-            </div>
+            <form action="/ac" method="POST" class="acForm">
+                <div class="tempBar">
+                    <label for="temp">Temperature</label>
+                    <input type="number" min="17" max="29" name="temp" value="22" id="temp">
+                </div>
+                <div class="acButtons">
+                    <button class="toggle" type="submit" name="state" value="1">ON</button>
+                    <button class="toggle" type="submit" name="state" value="0">OFF</button>
+                </div>
+            </form>
         </div>
         <div class="status">
             <p class="shead">
                 State
             </p>
             <p class="ssubhead">
-                Off
+                <%  if(locals.ac){ %>    
+                    <%= ac  %>
+                    <%console.log(ac)%>
+                <% }else{ %>
+                    OFF
+                <% } %>
             </p>
         </div>
         <div class="status">
@@ -173,7 +161,11 @@
                 Temperature
             </p>
             <p class="ssubhead">
-                23
+                <%  if(locals.temperature){ %>    
+                    <%= temperature  %>
+                <% }else{ %>
+                    22
+                <% } %>
             </p>
         </div>
     </div>

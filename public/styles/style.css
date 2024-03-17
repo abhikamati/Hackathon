@@ -1,14 +1,14 @@
 body{
-    background-color: #f0f0f0;
- }
+    background-image: url('background.jpg');
+}
  .head{
-    background-color: #f0f0f0;
     margin: 0px;
  }
  .heading{
     font-weight: bolder;
     font-size: 35px;
     text-align: center;
+    color: white;
  }
 
  .subheading{
@@ -19,8 +19,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    height: 80vh;
   }
   .subheader{
     opacity: 0.6;
@@ -29,10 +28,11 @@ body{
     border-style: none;
     border-width: 0px;
     border-radius: 5px;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.08);
+    /* background-color: white; */
+    box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.25); 
     height: 50px;
     width: 50px;
+    margin-bottom: 20px;
   }
   
   .image{
@@ -52,10 +52,10 @@ body{
     padding: 20px;
     margin: 20px ;
     width: 250px;
-    height: 350px;
-    background-color: #fff;
+    height: 400px;
+    background: radial-gradient(#e6c9aa, #3f87a6); 
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 1px 3px rgb(0, 0, 0, 0.15);
     text-align: center;
   }
   .device h1 {
@@ -92,7 +92,7 @@ body{
     border-style: none;
     border-width: 0px;
     border-radius: 5px;
-    background-color: white;
+    /* background-color: white; */
     box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.08);
     height: 30px;
     width: 30px;
@@ -106,7 +106,8 @@ body{
     height: 3rem;
     font-size: 3rem;
     border: none;
-    background-color: #fff;
+    /* background-color: #fff; */
+    /* filter: drop-shadow(1px 1px 1px 1.5px rgb(0, 0, 0, 0.08)); */
     cursor: pointer;
   }
 
@@ -117,13 +118,14 @@ body{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     column-gap: 0px;
     margin-top: 5px;
+    box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.25); 
  }
  .status:hover{
     cursor: pointer;
-    background-color: rgb(219, 219, 219);
+    opacity: 0.5;
  }
  .shead{
     text-align: left;
@@ -137,3 +139,43 @@ body{
     padding-left:10px;
     font-size: 8px;
  }   
+ .acform{
+    display: flex;
+    flex-direction:column;
+ }
+ .tempBar{
+    margin-bottom: 10px;
+    width: 100px;
+ }
+
+ [type="number"]{
+    width: 5rem;
+    height: 2rem;
+    border-style: none;
+    box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.08); 
+    background: none;
+ }
+ .acDashboard{
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    align-items: center;
+    align-items: center;
+ }
+
+ .form-select{
+    border-style: none;
+    outline: none;
+    box-shadow: 1px 1px 1px 1.5px rgb(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    width: 9rem;
+    height: 3rem;
+ }
+
+button{
+    background: none;
+}
+
+select{
+    background: none;
+}

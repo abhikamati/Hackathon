@@ -92,7 +92,6 @@ app.post("/LED", async (req, res) => {
   console.log(req.body);
 
   //data to be sent through the API
-
   const jsonData = {
     teamid: "Kh14XK0",
     device: `${req.body.device}`,
@@ -123,6 +122,52 @@ app.post("/LED", async (req, res) => {
 
   res.render("index.ejs", statusData );
 });
+
+
+//for  AC 
+app.post("/ac", async (req, res) => {
+  console.log(req.body);
+
+  //data to be sent through the API
+  let temperatureAC = req.body.temp;
+  if(req.body.state === 0)
+  temperatureAC = 22;
+  const jsonData = {
+    teamid: "Kh14XK0",
+    device: `ac`,
+    value: {
+        temp: temperatureAC,
+        state: req.body.state
+    },
+  };
+
+  let acStatus = 'OFF';
+  if (req.body.state === '1') 
+    acStatus = "ON";
+
+  let statusData = {
+    ac: acStatus,
+    temperature: req.body.temp,
+  };
+
+  const apiUrl = "https://kodessphere-api.vercel.app/devices";
+
+  axios
+    .post(apiUrl, jsonData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+  res.render("index.ejs", statusData );
+});
+
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
