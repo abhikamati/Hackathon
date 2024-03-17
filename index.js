@@ -10,17 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
-  //   try {
-  //     const response = await axios.get("https://kodessphere-api.vercel.app/divices/Kh14XK0");
-  //     const result = await response.data;
-  //     console.log(result);
-  //     // res.render("index.ejs", { data: result });
-  //   } catch (error) {
-  //     console.error("Failed to make request:", error.message);
-  //     res.render("index.ejs", {
-  //       error: error.message,
-  //     });
-  //   }
 });
 
 //for fan control
